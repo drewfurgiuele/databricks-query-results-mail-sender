@@ -1,0 +1,19 @@
+command: [
+  "streamlit", 
+  "run",
+  "app.py"
+]
+
+# Application Environment Variables
+
+# EMAIL_NOTEBOOK_PATH: The workspace path to the notebook that will run the job. Each supplied notebook 
+# uses a different Email service connector. The example provided here uses the SMTP version (assuming the app and
+# notebooks are deployed to the default path)
+
+# MAIL_FROM: The "from" email address; the address that will show up as the "From" in the recieved email.
+
+env:
+  - name: 'EMAIL_NOTEBOOK_PATH'
+    value: '/Workspace/mail-scheduler/src/Query And Email Results - Basic SMTP'
+  - name: 'MAIL_FROM'
+    value: 'DoNotReply@dublindata.net'

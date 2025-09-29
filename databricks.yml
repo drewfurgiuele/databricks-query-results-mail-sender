@@ -1,0 +1,25 @@
+bundle:
+  name: mail_scheduler_bundle
+
+resources:
+  apps:
+    mail_scheduler_app:
+      name: mail-scheduler
+      source_code_path: ./src/app
+      description: 'A basic application that arranges a scheduled job that runs SQL-query based output, saved as an Excel file, and then emailed to a user (or group of users)'
+      permissions:
+        - level: CAN_USE
+          group_name: users
+      user_api_scopes:
+        - sql
+        - files.files
+
+
+  # Create secret scope; you still need to create the secrets themselves, see the notebooks for more details
+  #secret_scopes:
+  #  dbx-mail-scheduler:
+  #    name: dbx-mail-scheduler
+
+workspace:
+  root_path: /
+  file_path: /mail-scheduler
